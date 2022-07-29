@@ -43,3 +43,9 @@ main img:hover {
 main p {
   text-align: center;
 }
+
+@media (max-width: 600px) {
+  body main {
+    max-width: 320px
+  }
+}
