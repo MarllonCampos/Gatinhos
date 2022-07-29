@@ -35,20 +35,26 @@ const imgElement = document.querySelector("main img")
 const paragraphElement = document.querySelector("main p")
 const TEN_SECONDS_TO_MILLI = 10000
 const ONE_SECONDS_IN_MILLI = 1000
+let time = ONE_SECONDS_IN_MILLI / 100;
 
-setInterval(() => {
+paragraphElement.innerText = `A imagem do gatinho vai trocar em: ${time}s`;
+
+
+function setRandomCatPhoto() {
   const randomPosition = Math.floor(Math.random() * (catArray.length));
   const catImgName = catArray[randomPosition]
   const catImgPath = `./photos/${catImgName}`
   imgElement.src = catImgPath
   imgElement.alt = catImgName
+}
+setRandomCatPhoto()
 
 
-}, TEN_SECONDS_TO_MILLI)
-let time = ONE_SECONDS_IN_MILLI / 100;
+setInterval(setRandomCatPhoto, TEN_SECONDS_TO_MILLI)
+
 const setTimeOut = setInterval(() => {
   time--;
-  console.log(time)
-  paragraphElement.innerText = `A imagem do gatinho vai trocar em: ${time}s`;
+  paragraphElement.innerText = `A imagem do gatinho vai trocar em: ${time.toString().padStart(2, "0")}s`;
   if (time == 0) time = ONE_SECONDS_IN_MILLI / 100;
 }, ONE_SECONDS_IN_MILLI)
+

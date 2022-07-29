@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+html,body {
+  min-height: 100vh;
+  cursor: url(https://cdn.custom-cursor.com/db/4656/32/arrow2662.png),default !important;
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #415A77;
+}
+body main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #E0E1DD;
+  border-radius: 24px;
+  padding: 6rem;
+}
+
+main img {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  margin-bottom: 24px;
+  transition: transform 0.2s linear;
+}
+
+main img:hover {
+  transform: scale(1.1);
+  cursor: url(https://cdn.custom-cursor.com/db/4655/32/arrow2662.png) ,pointer!important;
+}
+
+main p {
+  text-align: center;
+}
